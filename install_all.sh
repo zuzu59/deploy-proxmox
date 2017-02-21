@@ -12,6 +12,7 @@ fi
 #arrête la mise à jour du système lors du reboot (https://github.com/boxcutter/ubuntu/issues/73)
 sudo systemctl stop apt-daily.service # disable run when system boot
 sudo systemctl stop apt-daily.timer   # disable timer run
+sleep 5
 
 # modifie le hostname
 ./change_hostname.sh $1
