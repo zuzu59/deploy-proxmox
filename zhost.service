@@ -1,0 +1,12 @@
+[Unit]
+Description=Modification du hostname avec l'adresse ip de la machine
+After=network-online.target
+ 
+[Service]
+Type=oneshot
+ExecStart=/root/zhost.sh
+
+ 
+[Install]
+WantedBy=multi-user.target
+
