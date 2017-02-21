@@ -10,8 +10,8 @@ if [ -z "$1" ]
 fi
 
 #arrête la mise à jour du système lors du reboot (https://github.com/boxcutter/ubuntu/issues/73)
-sudo systemctl disable apt-daily.service # disable run when system boot
-
+sudo systemctl stop apt-daily.service # disable run when system boot
+sudo systemctl stop apt-daily.timer   # disable timer run
 
 # modifie le hostname
 ./change_hostname.sh $1
