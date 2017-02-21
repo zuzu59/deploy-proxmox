@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour installer des machines virtuelles Ubuntu dans l'infra de tests Proxmox de la SDF
-#zf170221.1729
+#zf170221.1942
 
 #test si l'argument est vide
 if [ -z "$1" ]
@@ -9,13 +9,8 @@ if [ -z "$1" ]
     exit
 fi
 
-# modifie au vol le hostname avec l'adrs ip du dhcp
-sudo cp zhost.sh /root
-sudo sed -i "s/THEHOST=\"toto\"/THEHOST=\"$1\"/" /root/zhost.sh
-sudo cp zhost.service /etc/systemd/system
-sudo chown root:root /etc/systemd/system/zhost.service
-sudo systemctl daemon-reload
-sudo systemctl enable zhost.service
+# modifie le hostname
+./change_hostname.sh $1
 
 # installation de zdyndns
 ./install_zdyndns.sh
@@ -27,5 +22,5 @@ sudo systemctl enable zhost.service
 
 
 
+echo ---------- end
 
-echo "end"

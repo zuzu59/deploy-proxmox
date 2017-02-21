@@ -1,8 +1,8 @@
 #!/bin/bash
 #Installation de zdyndns
-#zf170221.1751
+#zf170221.1943
 
-echo ---------- install and setup supervisor
+echo ---------- install zdyndns
 sudo apt-get update
 sleep 3
 sudo apt-get -y install supervisor

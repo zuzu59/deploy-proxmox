@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le hostname avec l'adresse ip du dhcp
-#zf170221.1642
+#zf170221.1935
 
 #/bin/sleep 3
 
@@ -9,7 +9,8 @@ THEHOST="toto"
 
 echo $THEHOST-$THEIP > /dev/kmsg
 
-/bin/hostname $THEHOST-$(echo $THEIP |/bin/sed "s/\./-/g")
+/bin/hostname $THEHOST
+#-$(echo $THEIP |/bin/sed "s/\./-/g")
 
 echo "$THEIP $(hostname)" >> /etc/hosts
 
