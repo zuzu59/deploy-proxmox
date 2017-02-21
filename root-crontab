@@ -21,5 +21,5 @@
 # 
 # m h  dom mon dow   command
 
-@reboot /home/ubuntu/deploy-proxmox/zhost.sh
+@reboot /root/zhost.sh
 
