@@ -22,7 +22,7 @@ sudo dpkg --configure -a              #remet en état si problème dû à l'arr�
 ./install_zdyndns.sh
 
 # copie les certificats ssh
-ssh-copy.ch
+./ssh-copy.ch
 
 # installation des utilitaires
 #sudo apt-get update
