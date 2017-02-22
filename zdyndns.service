@@ -1,0 +1,12 @@
+[Unit]
+Description=Service zdyndns
+After=network-online.target
+ 
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/root/zdyndns_client.sh
+
+[Install]
+WantedBy=multi-user.target
+

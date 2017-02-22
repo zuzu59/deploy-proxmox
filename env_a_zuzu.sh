@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour créer mon environnement git ;-)
-#zf170212.1859
+#zf170222.1535
 
 git config --global user.name "Christian Zufferey"
 git config --global user.email "christian@zufferey.com"
