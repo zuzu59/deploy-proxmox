@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour installer des machines virtuelles Ubuntu dans l'infra de tests Proxmox de la SDF
-#zf170222.1618
+#zf170222.1817
 
 #test si l'argument est vide
 if [ -z "$1" ]
@@ -16,6 +16,9 @@ sudo dpkg --configure -a              #remet en état si problème dû à l'arr�
 
 # modifie le hostname
 ./change_hostname.sh $1
+
+# installation de collectd
+./install_collectd.sh
 
 # installation de zdyndns
 ./install_zdyndns.sh
