@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour installer des machines virtuelles Ubuntu dans l'infra de tests Proxmox de la SDF
-#zf170221.2137
+#zf170222.0935
 
 #test si l'argument est vide
 if [ -z "$1" ]
@@ -20,6 +20,8 @@ sleep 10
 # installation de zdyndns
 ./install_zdyndns.sh
 
+# copie les certificats ssh
+ssh-copy.ch
 
 # installation des utilitaires
 #sudo apt-get update
