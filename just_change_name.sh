@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour juste changer le nom du hostname après un clone et rebooter tout de suite après
-#zf170223.1101
+#zf170223.1110
 
 #test si l'argument est vide
 if [ -z "$1" ]
@@ -18,5 +18,6 @@ sudo chown root:root /etc/systemd/system/zhost.service
 sudo systemctl daemon-reload
 sudo systemctl enable zhost.service
 
+sudo reboot
 
 
