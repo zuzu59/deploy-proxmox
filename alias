@@ -1,3 +1,5 @@
 alias gtree='git log --graph --oneline --decorate --all'
 alias purge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && free"
+alias zdyn='echo "d" | nc sdftests.epfl.ch 3318 |sort'
+alias zdynwatch='watch -n 1 '\''echo d | nc sdftests.epfl.ch 3318 |sort'\'''
 
