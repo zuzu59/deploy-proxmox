@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 #Installation d'un environnement complet Grafana
-#zf170223.1600
+#zf170223.1600, zf170227.1036
 
-echo "ATTENTION, il faut faire tourner ce script dans le dosier racine Ubuntu !"
-echo "donc: ~/deploy-proxmox/grafana/install_influxdb_grafana.sh"
+echo ATTENTION, il faut faire tourner ce script dans le dossier de déploiement à cause des fichiers .deb !
 echo ""
 #read -p "appuyer une touche pour continuer"
 
@@ -20,8 +19,7 @@ sudo update-rc.d grafana-server defaults 95 10
 echo ---------- install influxdb
 wget https://dl.influxdata.com/influxdb/releases/influxdb_1.2.0_amd64.deb
 sudo dpkg -i influxdb_1.2.0_amd64.deb
-
-#sudo cp /vagrant/influxdb.conf /etc/opt/influxdb/influxdb.conf
+sudo cp ~/deploy-proxmox/grafana/influxdb.conf /etc/influxdb/influxdb.conf
 
 sudo service influxdb restart
 sudo service grafana-server restart
