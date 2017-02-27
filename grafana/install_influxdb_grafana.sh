@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Installation d'un environnement complet Grafana
-#zf170223.1600, zf170227.1036
+#zf170223.1600, zf170227.1110
 
 echo ATTENTION, il faut faire tourner ce script dans le dossier de déploiement à cause des fichiers .deb !
 echo ""
@@ -14,7 +14,8 @@ echo ---------- install grafana and setup
 wget https://grafanarel.s3.amazonaws.com/builds/grafana_4.1.2-1486989747_amd64.deb
 sudo apt-get -y install adduser libfontconfig
 sudo dpkg -i grafana_4.1.2-1486989747_amd64.deb
-sudo update-rc.d grafana-server defaults 95 10
+sudo systemctl enable grafana-server.service
+
 
 echo ---------- install influxdb
 wget https://dl.influxdata.com/influxdb/releases/influxdb_1.2.0_amd64.deb
