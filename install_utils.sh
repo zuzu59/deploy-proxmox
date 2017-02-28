@@ -6,7 +6,7 @@ echo ---------- install des utilitaires
 
 cat alias >> ~/.bashrc
 sudo apt-get update
-sudo apt-get -y install htop git
+sudo apt-get -y install htop git unzip
 
 
 
