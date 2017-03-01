@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 #Installation du discovery service Consul
-#zf170301.0936
-
-echo ATTENTION, il faut faire tourner ce script dans le dosier Ubuntu !
-read -p "appuyer une touche pour continuer"
+#zf170301.1632
 
 echo ---------- update
 sudo dpkg --configure -a
@@ -26,13 +23,4 @@ sudo chown consul:consul /var/consul
 sudo chmod 775 /var/consul
 sudo mkdir -p /etc/consul.d/{bootstrap,server,client}
 
-echo ---------- 
-echo ---------- 
-echo ---------- IL FAUT SE RECONNECTER POUR RENDRE VALIDE LE NOUVEAU PATH
-echo ---------- 
-echo ---------- 
-
-
-
-
-
+./install_consul_client.sh

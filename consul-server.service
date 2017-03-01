@@ -1,0 +1,12 @@
+[Unit]
+Description=Service consul server
+After=network-online.target
+ 
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=consul agent -server -bootstrap -ui -client=0.0.0.0 -data-dir /tmp/consul
+
+[Install]
+WantedBy=multi-user.target
+
