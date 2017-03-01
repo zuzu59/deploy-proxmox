@@ -1,17 +1,21 @@
 #!/usr/bin/env bash
 #Installation du discovery service Consul
-#zf170228.2212
+#zf170301.0936
 
 echo ATTENTION, il faut faire tourner ce script dans le dosier Ubuntu !
 read -p "appuyer une touche pour continuer"
 
 echo ---------- update
+sudo dpkg --configure -a
+sudo apt-get -f install
 sudo apt-get -y update > /dev/null
 
 echo ---------- install consul
+rm consul_0.7.5_linux_amd64.zip
 wget https://releases.hashicorp.com/consul/0.7.5/consul_0.7.5_linux_amd64.zip
 sudo apt-get -y install unzip
 sudo unzip consul_0.7.5_linux_amd64.zip -d /usr/local/bin/consul
+rm consul_0.7.5_linux_amd64.zip
 echo "PATH=$PATH:/usr/local/bin/consul" >> ~/.bashrc
 
 sudo useradd consul
