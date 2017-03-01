@@ -1,10 +1,9 @@
 #!/usr/bin/env bash
 #Installation du discovery service Consul
-#zf170301.1632
+#zf170301.1714
 
 echo ---------- update
-sudo dpkg --configure -a
-sudo apt-get -f install
+./stop_daily_updates.sh
 sudo apt-get -y update > /dev/null
 
 echo ---------- install consul
