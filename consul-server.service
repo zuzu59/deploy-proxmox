@@ -5,7 +5,7 @@ After=network-online.target
 [Service]
 Type=simple
 Restart=on-failure
-ExecStart=/usr/local/bin/consul/consul agent -server -bootstrap -ui -client=0.0.0.0 -data-dir /tmp/consul
+ExecStart=/usr/local/bin/consul/consul agent -server -bootstrap -ui -client=0.0.0.0 -data-dir /tmp/consul -dns-port 53 -recursor=8.8.8.8
 
 [Install]
 WantedBy=multi-user.target
