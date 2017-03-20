@@ -8,8 +8,6 @@ alias gpl='git pull'
 alias gch='git checkout'
 alias gtree='git log --graph --oneline --decorate --all'
 alias zpurge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && free"
-alias zdyn='echo "d" | nc sdftests.epfl.ch 3318 |sort'
-alias zdynwatch='watch -n 1 '\''echo d | nc sdftests.epfl.ch 3318 |sort'\'''
 alias zssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 
