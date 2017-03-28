@@ -1,6 +1,7 @@
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gin='git init'
 alias gcl='git clone'
+alias gcr='git credential-cache exit'
 alias gst='git status'
 alias gad='git add -A'
 alias gcm='git commit'
