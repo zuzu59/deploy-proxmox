@@ -4,7 +4,7 @@
 
 echo ---------- patch_sshd_AcceptEnv
 
-sudo patch /etc/ssh/sshd_config < patch_sshd_AcceptEnv
+sudo patch /etc/ssh/sshd_config < ~/deploy-proxmox/patch_sshd_AcceptEnv
 sudo systemctl restart sshd.service
 
 
