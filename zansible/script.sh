@@ -6,8 +6,7 @@ echo ---------- script start
 
 #git -C ./deploy-proxmox/ pull
 #./deploy-proxmox/patch_sshd_AcceptEnv.sh
+cat /etc/ssh/sshd_config |grep GIT
 
-#cat /etc/ssh/sshd_config |grep GIT
-
-cat /etc/hosts
+#cat /etc/hosts
 
