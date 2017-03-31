@@ -1,5 +1,6 @@
-sdf-publichain-dev
-sdf-publichain-fred
-sdf-publichain-manu
-sdf-publichain-prod
-sdf-publichain-test
+sdf-cartopeople-dev
+sdf-cartopeople-nicolas
+sdf-cartopeople-prod
+sdf-cartopeople-test
+sdf-cartopeople-timon
+sdf-cartopeople-zuzu

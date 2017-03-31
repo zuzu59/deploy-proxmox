@@ -1,0 +1,2 @@
+zdyn carto | awk {'print $1'} > machines.txt
+
