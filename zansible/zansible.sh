@@ -10,6 +10,6 @@ filelines=`cat machines.txt`
 for m in $filelines ; do
 	echo ---------- start on $m
 	scp $sshoptions ./script.sh ubuntu@$m:.
-	echo $password | ssh -t -t $sshoptions ubuntu@$m '~/script.sh' |grep -v $password
+	echo $password | ssh -t -t $sshoptions ubuntu@$m "~/script.sh $m" |grep -v $password
 	ssh $sshoptions ubuntu@$m 'rm ~/script.sh'
 done
