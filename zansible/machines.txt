@@ -1,6 +1,8 @@
-sdf-cartopeople-dev
-sdf-cartopeople-nicolas
-sdf-cartopeople-prod
-sdf-cartopeople-test
-sdf-cartopeople-timon
-sdf-cartopeople-zuzu
+sdf-fmp2copernic-claude
+sdf-fmp2copernic-dev
+sdf-fmp2copernic-domq
+sdf-fmp2copernic-ismail
+sdf-fmp2copernic-pierreq
+sdf-fmp2copernic-prod
+sdf-fmp2copernic-test
+sdf-fmp2copernic-zuzu

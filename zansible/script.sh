@@ -9,5 +9,5 @@ echo ---------- script start
 
 #cat /etc/ssh/sshd_config |grep GIT
 
-sudo ls /root
+cat /etc/hosts
 
