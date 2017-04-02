@@ -14,8 +14,23 @@ echo ---------- script start $1
 #sudo /root/zhost.sh
 #cat /etc/hosts
 
-#sudo /etc/update-motd.d/90-updates-available
+
+
+#### voir si on a besoin de faire des updates
+sudo /etc/update-motd.d/90-updates-available
+
+#### fait tous les updates
+#sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; ~/deploy-proxmox/clean_install.sh
+
+#### voir si on a besoin de rebooter
 sudo /etc/update-motd.d/98-reboot-required
+
+#### rebooter si nécesssaire
+#ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
+#if [ "$ifrestart" = "restart" ] ; then echo $ifrestart ; sudo reboot ; fi
+
+#### reboote la machine
+#sudo reboot
 
 
 

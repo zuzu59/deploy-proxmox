@@ -1,5 +1,8 @@
-sdf-publichain-dev
-sdf-publichain-fred
-sdf-publichain-manu
-sdf-publichain-prod
-sdf-publichain-test
+sdf-fmp2copernic-claude
+sdf-fmp2copernic-dev
+sdf-fmp2copernic-domq
+sdf-fmp2copernic-ismail
+sdf-fmp2copernic-pierreq
+sdf-fmp2copernic-prod
+sdf-fmp2copernic-test
+sdf-fmp2copernic-zuzu
