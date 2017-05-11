@@ -9,7 +9,7 @@ echo ---------- script start $1
 
 #### patch pour autoriser de transmettre via le ssh forward les variables env pour GIT
 #./deploy-proxmox/patch_sshd_AcceptEnv.sh
-cat /etc/ssh/sshd_config |grep GIT
+#cat /etc/ssh/sshd_config |grep GIT
 
 #### patch le problème du /etc/hosts
 #cd ./deploy-proxmox
@@ -28,7 +28,7 @@ cat /etc/ssh/sshd_config |grep GIT
 #sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; ~/deploy-proxmox/clean_install.sh
 
 #### voir si on a besoin de rebooter
-#sudo /etc/update-motd.d/98-reboot-required
+sudo /etc/update-motd.d/98-reboot-required
 
 #### rebooter si nécesssaire
 #ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
