@@ -5,7 +5,7 @@
 echo ---------- script start $1
 
 #### met à jour la distrib deploy-proxmox de github
-#git -C ./deploy-proxmox/ pull
+git -C ./deploy-proxmox/ pull
 
 #### patch pour autoriser de transmettre via le ssh forward les variables env pour GIT
 #./deploy-proxmox/patch_sshd_AcceptEnv.sh
@@ -21,17 +21,24 @@ echo ---------- script start $1
 #cat ~/.bashrc
 #~/deploy-proxmox/install_utils.sh
 
+#### patch le zdyndns
+~/deploy-proxmox/install_zdyndns.sh
+
 #### voir si on a besoin de faire des updates
 #sudo /etc/update-motd.d/90-updates-available
 
 #### fait tous les updates
-#sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; ~/deploy-proxmox/clean_install.sh
+#sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
+
+#### clean les anciens updates
+#sudo ~/deploy-proxmox/clean_install.sh
 
 #### voir si on a besoin de rebooter
-sudo /etc/update-motd.d/98-reboot-required
+#sudo /etc/update-motd.d/98-reboot-required
 
 #### rebooter si nécesssaire
 #ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
+#echo $ifrestart
 #if [ "$ifrestart" = "restart" ] ; then echo $ifrestart ; sudo reboot ; fi
 
 #### reboote la machine
