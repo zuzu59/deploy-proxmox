@@ -1,7 +1,3 @@
-sdf-fmp2copernic-claude
-sdf-fmp2copernic-domq
-sdf-fmp2copernic-ismail
-sdf-fmp2copernic-pierreq
-sdf-fmp2copernic-prod
-sdf-fmp2copernic-test
-sdf-fmp2copernic-zuzu
+zuzu123-1
+zuzu123-2
+zuzu123-3
