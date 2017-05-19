@@ -5,7 +5,12 @@
 
 echo ---------- zalerter start
 sshoptions="-q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
-echo "Enter sudo password: " ; read -s password
+#echo "Enter sudo password: " ; read -s password
+password="password"
+
+
+./make_machines_list.sh \.92\.104\.
+
 
 filelines=`cat machines.txt`
 for m in $filelines ; do
