@@ -30,7 +30,6 @@ sdf-publichain-fred
 sdf-publichain-manu
 sdf-publichain-prod
 sdf-publichain-test
-ubuntu
 zuzu123-1
 zuzu123-2
 zuzu123-3
