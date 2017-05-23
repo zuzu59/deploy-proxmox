@@ -1,11 +1,17 @@
 #!/usr/bin/env bash
 #script.sh, petit script à exécuter en remote
-#zf170420.1051
+#zf170423.0949
 
 echo ---------- script start $1
 
 #### met à jour la distrib deploy-proxmox de github
 #git -C ./deploy-proxmox/ pull
+
+
+#### regarde si on a besoin de faire tourner install_utils.sh
+tail -n 4 /home/ubuntu/.bashrc
+
+
 
 #### patch pour autoriser de transmettre via le ssh forward les variables env pour GIT
 #./deploy-proxmox/patch_sshd_AcceptEnv.sh
@@ -25,13 +31,13 @@ echo ---------- script start $1
 #~/deploy-proxmox/install_zdyndns.sh
 
 #### indique l'espace disque restant
-df -h |grep '/dev/mapper' | awk {'print $4'}
+#df -h |grep '/dev/mapper' | awk {'print $4'}
 
 #### regarde si on a besoin de faire des updates
-sudo /etc/update-motd.d/90-updates-available
+#sudo /etc/update-motd.d/90-updates-available
 
 #### fait tous les updates
-sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
+#sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
 
 #### clean les anciens updates
 #sudo ~/deploy-proxmox/clean_install.sh
