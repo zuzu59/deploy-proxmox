@@ -1,0 +1,27 @@
+*** bashrc.old	2017-05-23 11:51:33.224000000 +0200
+--- bashrc	2017-05-23 11:52:54.428000000 +0200
+***************
+*** 116,131 ****
+    fi
+  fi
+  PATH=/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin/consul
+- alias gtree='git log --graph --oneline --decorate --all'
+- alias purge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && free"
+- alias zdyn='echo "d" | nc sdftests.epfl.ch 3318 |sort'
+- alias zdynwatch='watch -n 1 '\''echo d | nc sdftests.epfl.ch 3318 |sort'\'''
+- alias zssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+- alias gcl='git clone'
+- alias gst='git status'
+- alias gad='git add -A'
+- alias gcm='git commit'
+- alias gps='git push'
+- alias gpl='git pull'
+- 
+  
+--- 116,121 ----
+    fi
+  fi
+  PATH=/home/ubuntu/bin:/home/ubuntu/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/bin/consul
+  
++ source ~/deploy-proxmox/alias
++ source ~/deploy-proxmox/zfunctions.sh
