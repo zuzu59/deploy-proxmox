@@ -9,7 +9,7 @@ echo ---------- script start $1
 
 
 #### regarde si on a besoin de faire tourner install_utils.sh
-tail -n 4 /home/ubuntu/.bashrc
+#tail -n 4 /home/ubuntu/.bashrc
 
 
 
