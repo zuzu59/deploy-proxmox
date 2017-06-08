@@ -34,7 +34,7 @@ echo ---------- script start $1
 #df -h |grep '/dev/mapper' | awk {'print $4'}
 
 #### regarde si on a besoin de faire des updates
-#sudo /etc/update-motd.d/90-updates-available
+sudo /etc/update-motd.d/90-updates-available
 
 #### fait tous les updates
 #sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh

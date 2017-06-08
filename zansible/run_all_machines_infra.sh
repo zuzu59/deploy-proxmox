@@ -3,7 +3,7 @@
 #zf170523.0955
 
 
-./make_machines_list.sh \.92\.104\.
+./make_machines_list.sh \.10\.92\.
 
 ./zansible.sh
 
