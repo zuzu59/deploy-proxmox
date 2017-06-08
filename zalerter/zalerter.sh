@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #zalerter, Le Nagios du pauvre, petit script tout simple qui permet d'envoyer des messages d'alertes sur Telegram en fonction de 'recettes' simples 
 #qui tournent en remote sur les machines qui se trouvent dans le fichier machines.txt
-#zf170522.1156
+#zf170608.1138
 
 echo ---------- zalerter start
 sshoptions="-q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
@@ -9,7 +9,7 @@ sshoptions="-q -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 password="password"
 
 
-./make_machines_list.sh \.92\.104\.
+./make_machines_list.sh \.10\.92\.
 
 
 filelines=`cat machines.txt`
