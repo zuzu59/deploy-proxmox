@@ -1,6 +1,4 @@
 dojo-app-1
-idevelopsrvtest1
-idevelopsrvtest2
 sdf-bill2myprint-dev
 sdf-bill2myprint-gil
 sdf-bill2myprint-lindo
