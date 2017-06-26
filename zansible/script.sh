@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 #script.sh, petit script à exécuter en remote
-#zf170626.1528
+#zf170626.1700
 
 echo ---------- script start $1
 
 #### met à jour la distrib deploy-proxmox de github
 git -C ./deploy-proxmox/ pull
 
+#### patch pour purger les vieux kernels automatiquement lors des mises à jour de sécurité
+~/deploy-proxmox/patch_50unattended-upgrades.sh
 
 #### regarde si on a besoin de faire tourner install_utils.sh
 #tail -n 4 /home/ubuntu/.bashrc
@@ -14,7 +16,7 @@ git -C ./deploy-proxmox/ pull
 
 
 #### patch pour autoriser de transmettre via le ssh forward les variables env pour GIT
-#./deploy-proxmox/patch_sshd_AcceptEnv.sh
+#~/deploy-proxmox/patch_sshd_AcceptEnv.sh
 #cat /etc/ssh/sshd_config |grep GIT
 
 #### patch le problème du /etc/hosts
@@ -37,7 +39,7 @@ git -C ./deploy-proxmox/ pull
 sudo /etc/update-motd.d/90-updates-available
 
 #### fait tous les updates
-sudo apt-get -y update ; sudo dpkg --configure -a ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
+#sudo apt-get -y update ; sudo dpkg --configure -a ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
 
 #### clean les anciens updates
 #sudo ~/deploy-proxmox/clean_install.sh
@@ -46,8 +48,8 @@ sudo apt-get -y update ; sudo dpkg --configure -a ; sudo apt-get -y dist-upgrade
 sudo /etc/update-motd.d/98-reboot-required
 
 #### rebooter si nécesssaire
-ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
-if [ "$ifrestart" = "restart" ] ; then echo $ifrestart ; sudo reboot ; fi
+#ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
+#if [ "$ifrestart" = "restart" ] ; then echo $ifrestart ; sudo reboot ; fi
 
 #### reboote la machine
 #sudo reboot

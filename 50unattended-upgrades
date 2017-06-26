@@ -1,0 +1,36 @@
+*** 50unattended-upgrades.org	2017-06-26 16:22:50.613321515 +0200
+--- 50unattended-upgrades	2017-06-26 16:24:26.453452417 +0200
+***************
+*** 7,13 ****
+  	// available, the policy for updates is such that unattended-upgrades
+  	// should also install from here by default.
+  	"${distro_id}ESM:${distro_codename}";
+! //	"${distro_id}:${distro_codename}-updates";
+  //	"${distro_id}:${distro_codename}-proposed";
+  //	"${distro_id}:${distro_codename}-backports";
+  };
+--- 7,13 ----
+  	// available, the policy for updates is such that unattended-upgrades
+  	// should also install from here by default.
+  	"${distro_id}ESM:${distro_codename}";
+! 	"${distro_id}:${distro_codename}-updates";
+  //	"${distro_id}:${distro_codename}-proposed";
+  //	"${distro_id}:${distro_codename}-backports";
+  };
+***************
+*** 49,55 ****
+  
+  // Do automatic removal of new unused dependencies after the upgrade
+  // (equivalent to apt-get autoremove)
+! //Unattended-Upgrade::Remove-Unused-Dependencies "false";
+  
+  // Automatically reboot *WITHOUT CONFIRMATION*
+  //  if the file /var/run/reboot-required is found after the upgrade 
+--- 49,55 ----
+  
+  // Do automatic removal of new unused dependencies after the upgrade
+  // (equivalent to apt-get autoremove)
+! Unattended-Upgrade::Remove-Unused-Dependencies "true";
+  
+  // Automatically reboot *WITHOUT CONFIRMATION*
+  //  if the file /var/run/reboot-required is found after the upgrade 
