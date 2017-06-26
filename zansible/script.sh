@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #script.sh, petit script à exécuter en remote
-#zf170423.0949
+#zf170626.1528
 
 echo ---------- script start $1
 
 #### met à jour la distrib deploy-proxmox de github
-#git -C ./deploy-proxmox/ pull
+git -C ./deploy-proxmox/ pull
 
 
 #### regarde si on a besoin de faire tourner install_utils.sh
@@ -37,7 +37,7 @@ echo ---------- script start $1
 sudo /etc/update-motd.d/90-updates-available
 
 #### fait tous les updates
-#sudo apt-get -y update ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
+sudo apt-get -y update ; sudo dpkg --configure -a ; sudo apt-get -y dist-upgrade ; sudo ~/deploy-proxmox/clean_install.sh
 
 #### clean les anciens updates
 #sudo ~/deploy-proxmox/clean_install.sh
@@ -46,8 +46,8 @@ sudo /etc/update-motd.d/90-updates-available
 sudo /etc/update-motd.d/98-reboot-required
 
 #### rebooter si nécesssaire
-#ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
-#if [ "$ifrestart" = "restart" ] ; then echo $ifrestart ; sudo reboot ; fi
+ifrestart=`sudo /etc/update-motd.d/98-reboot-required | awk {'print $3'}`
+if [ "$ifrestart" = "restart" ] ; then echo $ifrestart ; sudo reboot ; fi
 
 #### reboote la machine
 #sudo reboot

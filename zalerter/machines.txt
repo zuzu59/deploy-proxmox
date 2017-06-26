@@ -12,9 +12,11 @@ sdf-cartopeople-test
 sdf-consul-srv1
 sdf-dhcp-srv1
 sdf-influxdb-srv1
+sdf-master
 sdf-publichain-dev
 sdf-publichain-fred
 sdf-publichain-manu
 sdf-publichain-prod
 sdf-publichain-test
+ubuntu
 zuzu123-1
