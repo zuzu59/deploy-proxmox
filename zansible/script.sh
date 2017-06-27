@@ -8,12 +8,10 @@ echo ---------- script start $1
 git -C ./deploy-proxmox/ pull
 
 #### patch pour purger les vieux kernels automatiquement lors des mises à jour de sécurité
-~/deploy-proxmox/patch_50unattended-upgrades.sh
+#~/deploy-proxmox/patch_50unattended-upgrades.sh
 
 #### regarde si on a besoin de faire tourner install_utils.sh
 #tail -n 4 /home/ubuntu/.bashrc
-
-
 
 #### patch pour autoriser de transmettre via le ssh forward les variables env pour GIT
 #~/deploy-proxmox/patch_sshd_AcceptEnv.sh

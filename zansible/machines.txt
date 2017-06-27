@@ -1,3 +1,5 @@
+dojo-app-2
+dojo-app-3
 sdf-bill2myprint-dev
 sdf-bill2myprint-gil
 sdf-bill2myprint-lindo
@@ -6,3 +8,14 @@ sdf-bill2myprint-nils
 sdf-bill2myprint-prod
 sdf-bill2myprint-test
 sdf-bill2myprint-yann
+sdf-cartopeople-prod
+sdf-cartopeople-test
+sdf-consul-srv1
+sdf-dhcp-srv1
+sdf-influxdb-srv1
+sdf-publichain-dev
+sdf-publichain-fred
+sdf-publichain-manu
+sdf-publichain-prod
+sdf-publichain-test
+zuzu123-1
