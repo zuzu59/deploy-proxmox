@@ -1,0 +1,12 @@
+[Unit]
+Description=Service traefik
+After=network-online.target
+ 
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=/root/traefik/traefik_start.sh
+
+[Install]
+WantedBy=multi-user.target
+

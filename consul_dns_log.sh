@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#Petit script pour voir les logs du DNS de consil
+#Petit script pour voir les logs du DNS de consul
 #zf170519.1605
 
 echo ---------- lance les logs du DNS
