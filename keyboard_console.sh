@@ -4,7 +4,7 @@
 echo ---------- patch_console_keyboard
 
 
-sudo apt-get -y install console-common
+sudo DEBIAN_FRONTEND=noninteractive apt-get -y install console-common
 #sudo dpkg-reconfigure console-data
 
 sudo sed -i.bak 's/^XKBMODEL=.*/XKBMODEL="macintosh"/' /etc/default/keyboard
