@@ -1,19 +1,19 @@
 #!/bin/bash
 # petit script pour purger le swap afin d'améliorer la réactivité de la machine
 # ATTENTION: cela ne peut tourner seulement si on a assez de RAM disponible !
-#zf170818.0822
+#zf170821.1459
 
 #Source: https://askubuntu.com/questions/1357/how-to-empty-swap-if-there-is-free-ram
 
 echo "Etat de la mémoire avant:"
-free
+free -h
 
 #purge le cache disque
 sync; sync; sync;
 sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches'
 
 echo "Etat de la mémoire après le purge du cache disque:"
-free
+free -h
 
 
 #purge le swap si assez de RAM disponible
@@ -38,5 +38,5 @@ else
 fi
 
 echo "Etat de la mémoire après le purge du swap:"
-free
+free -h
 
