@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le hostname avec l'adresse ip du dhcp et forcer le bon DNS
-#zf170816.1608
+#zf170828.1537
 
 #/bin/sleep 3
 
@@ -23,7 +23,39 @@ echo "ff02::2 ip6-allrouters" >> /etc/hosts
 
 echo "$THEIP $(hostname)" >> /etc/hosts
 
-echo "nameserver 10.92.103.53" > etc/resolv.conf
-echo "nameserver 8.8.8.8" >> etc/resolv.conf
-echo "search node.consul epfl.ch" >> etc/resolv.conf
+echo "nameserver 10.92.103.53" > /etc/resolv.conf
+echo "nameserver 8.8.8.8" >> /etc/resolv.conf
+echo "search node.consul epfl.ch" >> /etc/resolv.conf
+
+zcommand="pveversion"
+tstcommand=`command -v $zcommand`
+
+echo -e "
+$THEIP
+`host $THEIP`
+" > /etc/issue
+
+#echo $zcommand
+#echo $tstcommand
+
+if [ "$tstcommand" ]
+  then
+
+echo -e "
+------------------------------------------------------------------------------
+
+Welcome to the Proxmox Virtual Environment. Please use your web browser to
+configure this server - connect to:
+
+  https://$THEIP:8006/
+
+hello zuzu
+
+------------------------------------------------------------------------------
+
+" >> /etc/issue
+
+
+
+fi
 
