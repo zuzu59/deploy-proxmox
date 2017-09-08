@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-#Petit script pour changer le hostname avec l'adresse ip du dhcp et forcer le bon DNS
-#zf170828.1537
+#Petit script pour changer le hostname avec l'adresse ip du dhcp, forcer le bon DNS et ajouter la machine dans le DNS
+#zf170908.1544
 
 #/bin/sleep 3
 
@@ -14,6 +14,7 @@ echo $THEHOST-$THEIP > /dev/kmsg
 /bin/hostname $THEHOST
 #-$(echo $THEIP |/bin/sed "s/\./-/g")
 
+# change le hostname
 echo "127.0.0.1	localhost" > /etc/hosts
 echo "127.0.1.1	ubuntu" >> /etc/hosts
 echo "# The following lines are desirable for IPv6 capable hosts" >> /etc/hosts
@@ -23,10 +24,17 @@ echo "ff02::2 ip6-allrouters" >> /etc/hosts
 
 echo "$THEIP $(hostname)" >> /etc/hosts
 
+# force le bon DNS
 echo "nameserver 10.92.103.53" > /etc/resolv.conf
 echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 echo "search node.consul epfl.ch" >> /etc/resolv.conf
 
+
+# ajoute la machine dans le DNS de Consul
+/root/dns_add.sh $THEHOST $THEIP
+
+
+# change le message d'accueil sur la console
 zcommand="pveversion"
 tstcommand=`command -v $zcommand`
 
