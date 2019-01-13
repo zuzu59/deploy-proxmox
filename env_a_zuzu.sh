@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour créer mon environnement git ;-)
-#zf190113.1435
+#zf190113.1512
 
 
 #export GIT_AUTHOR_NAME="Christian Zufferey"
@@ -11,7 +11,7 @@
 
 git config --global user.name "Christian Zufferey"
 git config --global user.email "christian@zufferey.com"
-git config --global credential.helper "cache --timeout=300000"
+git config --global credential.helper "cache --timeout=36000"
 git config --global core.editor nano
 
 alias gtree='git log --graph --oneline --decorate --all'
