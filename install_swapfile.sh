@@ -1,12 +1,12 @@
 #!/bin/bash
 # Petit script pour créer facilement swapfile sur une machine virtuelle
-# zf190108.1017
+# zf190124.1024
 # source: https://support.rackspace.com/how-to/create-a-linux-swap-file/
 
 
-#create the swap space 1GB
-echo "Creating 1GB swap space in /swapfile..."
-fallocate -l 1G /swapfile
+#create the swap space 2GB
+echo "Creating 2GB swap space in /swapfile..."
+fallocate -l 2G /swapfile
 ls -lh /swapfile
 
 #secure the swapfile
