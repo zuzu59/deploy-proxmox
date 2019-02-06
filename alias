@@ -9,6 +9,8 @@ alias gps='git push'
 alias gpl='git pull'
 alias gch='git checkout'
 alias gtree='git log --graph --oneline --decorate --all'
+alias spacemonger='du -m -d 0 * | sort -n'
+alias zview='feh -.'
 alias sshg='ssh -A -o SendEnv="GIT*"'
 alias zpurge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && free"
 alias zssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
