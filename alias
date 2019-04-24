@@ -1,19 +1,22 @@
+
+
 alias flushdns='sudo killall -HUP mDNSResponder'
-alias gin='git init'
-alias gcl='git clone'
-alias gcr='git credential-cache exit'
-alias gst='git status'
 alias gad='git add -A'
-alias gcm='git commit'
-alias gps='git push'
-alias gpl='git pull'
 alias gch='git checkout'
+alias gcl='git clone'
+alias gcm='git commit'
+alias gcr='git credential-cache exit'
+alias gin='git init'
+alias gpl='git pull'
+alias gps='git push'
+alias gst='git status'
 alias gtree='git log --graph --oneline --decorate --all'
-alias histo='history |tail -n 50'
+alias zhisto='history |tail -n 50'
 alias spacemonger='du -m -d 0 * | sort -n'
-alias zview='feh -.'
 alias sshg='ssh -A -o SendEnv="GIT*"'
+alias zdu='du -m -d 0 *'
+alias zhead='head -n 50'
 alias zpurge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && free"
 alias zssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-
-
+alias ztail='tail -n 50'
+alias zview='feh -.'
