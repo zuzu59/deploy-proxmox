@@ -1,6 +1,7 @@
 alias flushdns='sudo killall -HUP mDNSResponder'
 alias gad='git add -A'
 alias gba='for b in `git branch -r | grep -v -- "->"`; do git branch --track ${b##origin/} $b; done'
+alias gbr='git branch -a'
 alias gch='git checkout'
 alias gcl='git clone'
 alias gcm='git commit'
