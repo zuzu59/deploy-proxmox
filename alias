@@ -11,7 +11,7 @@ alias gpl='git pull'
 alias gps='git push'
 alias gst='git status'
 alias gtree='git log --graph --oneline --decorate --all'
-alias zhisto="history |tail -n 50 | awk '{ \$1=\"\"; print \$0 }'"
+alias zhisto="history |tail -n 50 | sed 's/^[0-9 ]*//'"
 alias spacemonger='du -m -d 0 * | sort -n'
 alias sshg='ssh -A -o SendEnv="GIT*"'
 alias zdu='du -m -d 0 *'
