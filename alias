@@ -20,3 +20,5 @@ alias zpurge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && f
 alias zssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias ztail='tail -n 50'
 alias zview='feh -.'
+alias nbfiles='find . -maxdepth 1 -type d -exec /bin/bash -c "echo -e '\''{}>\c'\'' ; ls -1R '\''{}'\'' |grep -v '\''./'\'' |wc -l " \; |sort -n -k 2 -t '\''>'\'' '
+
