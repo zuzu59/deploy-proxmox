@@ -1,5 +1,5 @@
 #liste des fonctions bash personnelles
-#zf170425.1543
+#zf170425.1543, zf200501.1604
 
 zdyn() {
 	echo d | nc sdftests.epfl.ch 3318 | grep "$1" | sort
@@ -21,5 +21,9 @@ IPPUB=`echo $ZDYNDNS | awk {'print $2'}`
 ZSTR=$1$IPPUB
 echo ssh $ZSTR
 ssh $ZSTR
+}
+
+abs_path () {    
+   echo "$(cd $(dirname "$1");pwd)/$(basename "$1")"
 }
 
