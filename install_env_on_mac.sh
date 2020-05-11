@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Install mes environnement sur MAC
-#zf200311.1725
+#zf200511.1006
 
 # rm ~/.bashrc ~/.bash_profile ~/.nanorc
 
@@ -23,4 +23,4 @@ echo "source ~/.bashrc" >> ~/.bash_profile
 
 echo "set tabstospaces" >> ~/.nanorc
 echo "set tabsize 4" >> ~/.nanorc
-
+echo "include /usr/local/share/nano/*.nanorc" >> ~/.nanorc
