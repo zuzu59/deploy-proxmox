@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Install mes environnement sur MAC
-#zf200511.1006
+#zf200513.1402
 
 # rm ~/.bashrc ~/.bash_profile ~/.nanorc
 
@@ -16,6 +16,8 @@ echo "export GIT_COMMITTER_EMAIL=\"christian@zufferey.com\"" >> ~/.bashrc
 
 echo "export EDITOR=nano" >> ~/.bashrc
 echo "export LANG=en_US.UTF-8" >> ~/.bashrc
+
+echo "export PROMPT_COMMAND=\"history -a; history -c; history -r; \$PROMPT_COMMAND\""  >> ~/.bashrc
 
 ~/deploy-proxmox/env_a_zuzu.sh
 
