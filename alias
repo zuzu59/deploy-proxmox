@@ -17,6 +17,9 @@ alias nbfiles='find . -maxdepth 1 -type d -exec /bin/bash -c "echo -e '\''{}>\c'
 alias spacemonger='du -m -d 0 * | sort -n'
 alias sshg='ssh -A -o SendEnv="GIT*"'
 alias zdu='du -m -d 0 *'
+alias zdocker_ls_all='docker container ls -a'
+alias zdocker_prune_all='docker system prune -a -f --volumes'
+alias zdocker_rm_all='docker rm -f -v $(docker ps -q)'
 alias zhead='head -n 50'
 alias zhisto="history |tail -n 50 | sed 's/^[0-9 ]*//'"
 alias zpurge="free && sync && sudo sh -c 'echo 3 >/proc/sys/vm/drop_caches' && free"
