@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le hostname avec l'adresse ip du dhcp, forcer le bon DNS et ajouter la machine dans le DNS
-#zf171122.1619, zf191010.1140
+#zf171122.1619, zf191010.1140, zf210423.1516
 
 #THEIP=$(/sbin/ifconfig ens18 | /bin/grep "inet ad" | /usr/bin/cut -f2 -d: | /usr/bin/awk '{print $1}')
 #THEIP=$(/sbin/ifconfig | /bin/grep "inet addr" | /bin/grep -v 127\.0 | /usr/bin/cut -f2 -d: | /usr/bin/awk '{print $1}')
@@ -22,6 +22,9 @@ echo "ff02::1 ip6-allnodes" >> /etc/hosts
 echo "ff02::2 ip6-allrouters" >> /etc/hosts
 
 echo "$THEIP $(hostname)" >> /etc/hosts
+echo "$THEHOST" > /etc/hostname
+
+/usr/sbin/dhclient
 
 exit
 
