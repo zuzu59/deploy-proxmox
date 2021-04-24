@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le nom du hostname
-#zf170908.1551, zf210424.1549
+#zf170908.1551, zf210424.1835
 
 
 #test si l'argument est vide
@@ -27,6 +27,9 @@ sudo systemctl disable zhost.service
 sudo /root/zhost.sh
 
 /usr/bin/timedatectl set-timezone Europe/Zurich
+
+sudo rm /etc/machine-id
+sudo systemd-machine-id-setup
 
 sudo dhclient -r
 sudo rm /var/lib/dhcp/dhclient.leases
