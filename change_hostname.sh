@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le nom du hostname
-#zf170908.1551, zf210424.1519
+#zf170908.1551, zf210424.1549
 
 
 #test si l'argument est vide
@@ -16,11 +16,17 @@ sudo cp ~/deploy-proxmox/zhost.sh /root
 sudo cp ~/deploy-proxmox/dns_add.sh /root
 
 sudo sed -i "s/THEHOST=\"toto\"/THEHOST=\"$1\"/" /root/zhost.sh
-sudo cp ~/deploy-proxmox/zhost.service /etc/systemd/system
-sudo chown root:root /etc/systemd/system/zhost.service
-sudo systemctl daemon-reload
-sudo systemctl enable zhost.service
-sudo systemctl restart zhost.service
+
+#sudo cp ~/deploy-proxmox/zhost.service /etc/systemd/system
+#sudo chown root:root /etc/systemd/system/zhost.service
+#sudo systemctl daemon-reload
+#sudo systemctl enable zhost.service
+#sudo systemctl restart zhost.service
+
+sudo systemctl disable zhost.service
+sudo /root/zhost.sh
+
+/usr/bin/timedatectl set-timezone Europe/Zurich
 
 sudo dhclient -r
 sudo rm /var/lib/dhcp/dhclient.leases
