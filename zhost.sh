@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le hostname avec l'adresse ip du dhcp, forcer le bon DNS et ajouter la machine dans le DNS
-#zf171122.1619, zf191010.1140, zf210424.0804
+#zf171122.1619, zf191010.1140, zf210424.0815
 
 #THEIP=127.0.0.1
 
@@ -20,7 +20,7 @@ echo "$THEHOST" > /etc/hostname
 /usr/sbin/dhclient -r
 sleep 1
 /usr/sbin/dhclient
-sleep 3
+sleep 1
 THEIP=$(hostname -I)
 
 echo "$THEIP $(hostname)" >> /etc/hosts
