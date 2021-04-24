@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le nom du hostname
-#zf170908.1551
+#zf170908.1551, zf210424.1519
 
 
 #test si l'argument est vide
@@ -21,6 +21,10 @@ sudo chown root:root /etc/systemd/system/zhost.service
 sudo systemctl daemon-reload
 sudo systemctl enable zhost.service
 sudo systemctl restart zhost.service
+
+sudo dhclient -r
+sudo rm /var/lib/dhcp/dhclient.leases
+sudo reboot
 
 exit
 
