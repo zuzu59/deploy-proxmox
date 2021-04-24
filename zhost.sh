@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour changer le hostname avec l'adresse ip du dhcp, forcer le bon DNS et ajouter la machine dans le DNS
-#zf171122.1619, zf191010.1140, zf210424.1548
+#zf171122.1619, zf191010.1140, zf210424.1904
 
 THEIP=127.0.0.1
 
@@ -16,19 +16,21 @@ echo "ff02::1 ip6-allnodes" >> /etc/hosts
 echo "ff02::2 ip6-allrouters" >> /etc/hosts
 
 echo "$THEHOST" > /etc/hostname
-
-#/usr/sbin/dhclient -r
-#sleep 1
-#/usr/sbin/dhclient
-#sleep 1
-#THEIP=$(hostname -I)
-
 echo "$THEIP $(hostname)" >> /etc/hosts
 
-#/usr/bin/timedatectl set-timezone Europe/Zurich
-
+# ajoute la machine dans le DNS de Consul
+sleep 1
+THEIP=$(hostname -I)
+sleep 1
+/root/dns_add.sh $THEHOST $THEIP
 
 exit
+
+
+
+
+
+
 
 
 
