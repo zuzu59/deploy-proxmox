@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 #Petit script pour récupérer toutes les clefs ssh de la FSD sur Github ;-)
-#zf210421.1533, zf210924.1103
+#zf210421.1533, zf210924.1103, zf211119.1331
+
+#Usage, simplement faire:
+#
+# curl https://raw.githubusercontent.com/zuzu59/deploy-proxmox/master/get_ssh_key_fsd.sh | bash
 
 curl https://github.com/zuzu59.keys >> ~/.ssh/authorized_keys
 curl https://github.com/domq.keys >> ~/.ssh/authorized_keys
