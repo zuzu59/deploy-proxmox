@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour récupérer toutes les clefs ssh de la FSD sur Github ;-)
-#zf210421.1533, zf210924.1103, zf211119.1331
+#zf210421.1533, zf210924.1103, zf211126.1523
 
 #Usage, simplement faire:
 #
@@ -13,6 +13,10 @@ curl https://github.com/jdelasoie.keys >> ~/.ssh/authorized_keys
 curl https://github.com/lvenries.keys >> ~/.ssh/authorized_keys
 curl https://github.com/multiscan.keys >> ~/.ssh/authorized_keys
 curl https://github.com/ponsfrilus.keys >> ~/.ssh/authorized_keys
+
+curl https://github.com/williambelle.keys >> ~/.ssh/authorized_keys
+curl https://github.com/obieler.keys >> ~/.ssh/authorized_keys
+curl https://github.com/dragonleman.keys >> ~/.ssh/authorized_keys
 
 #curl https://github.com/nicolasreymond.keys >> ~/.ssh/authorized_keys
 #curl https://github.com/strikerpt.keys >> ~/.ssh/authorized_keys
