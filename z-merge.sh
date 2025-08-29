@@ -1,21 +1,18 @@
 #!/bin/bash
+# Script pour FUSIONNER A dans B
+# - Pour chaque fichier dans A, on crée le dossier parent sur B (si besoin)
+# - On déplace le fichier dans ce dossier
+# - Les dossiers de B restent intacts
+# - Aucune suppression de dossier
+# Usage : ./z-merge.sh ~/dev/tata/z-comfyui/data/ComfyUI/models/ ~/dev/titi/z-comfyui/data/ComfyUI/models/
 
-# Script pour déplacer (mv) la structure A dans B, en créant les dossiers parents si besoin
-# Usage : ./z-merge.sh path_A path_B
-# zf250829.1827
+# zf250829.2314
 
-set -euo pipefail  # Erreur immédiate sur erreur, non-assignation, pipe
-
-# Vérification des arguments
-if [ $# -ne 2 ]; then
-    echo "Usage: $0 path_A path_B"
-    exit 1
-fi
+set -euo pipefail
 
 path_A="$1"
 path_B="$2"
 
-# Vérifier que les chemins existent
 if [ ! -d "$path_A" ]; then
     echo "Erreur : le répertoire '$path_A' n'existe pas."
     exit 1
@@ -26,20 +23,27 @@ if [ ! -d "$path_B" ]; then
     exit 1
 fi
 
-# Parcourir tous les dossiers et fichiers dans path_A
-# On utilise find pour éviter les problèmes de casse ou d'ordre
-find "$path_A" -type d -o -type f | while read -r item; do
-    rel_path=$(realpath --relative-to="$path_A" "$item")
-    # Construire le chemin cible dans path_B
-    target_path="$path_B$(dirname "$rel_path")"
-    
-    # Créer les dossiers parents si nécessaire
-    mkdir -p "$target_path"
-    
-    # Déplacer le fichier ou le dossier
-    mv -v "$item" "$target_path"
+echo "🚀 Fusion de '$path_A' dans '$path_B' (fichiers uniquement)"
+
+# Parcourir tous les fichiers (et dossiers) dans A
+find "$path_A" -type f | while read -r file; do
+    # Extraire le chemin relatif du fichier par rapport à A
+    rel_path=$(basename "$file")
+    dir_path=$(dirname "$file")
+    rel_dir_path=$(realpath --relative-to="$path_A" "$dir_path")
+
+    # Construire le chemin cible dans B
+    target_dir="$path_B/$rel_dir_path"
+    target_file="$target_dir/$rel_path"
+
+    # Créer le dossier parent si nécessaire (même s’il existe déjà)
+    mkdir -p "$target_dir"
+
+    # Déplacer le fichier de A vers B
+    mv -f "$file" "$target_file"
+
+    echo "✅ Fichier copié/écrasé : $file → $target_file"
 done
 
-echo "✅ Déplacement terminé : la structure A a été déplacée dans B"
-
+echo "✅ Fusion terminée : les fichiers de '$path_A' ont été ajoutés ou écrasés dans '$path_B'"
 
