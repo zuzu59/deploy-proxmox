@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #Petit script pour installer facilement les NVIDIA Docker tools
-#zf251015.1822, zf251015.1823
+#zf251015.1822, zf251016.0047
 
 # source: https://hub.docker.com/r/ollama/ollama
 
@@ -23,6 +23,9 @@ export NVIDIA_CONTAINER_TOOLKIT_VERSION=1.17.8-1
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 
+nvidia-ctk runtime configure --runtime=docker --config=$HOME/.config/docker/daemon.json
+systemctl --user restart docker
+sudo nvidia-ctk config --set nvidia-container-cli.no-cgroups --in-place
 
 sudo docker run --rm --runtime=nvidia --gpus all ubuntu nvidia-smi
 
