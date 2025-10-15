@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Petit script pour installer facilement les NVIDIA Docker tools
-#zf251015.1822, zf251016.0047
+#zf251015.1822, zf251016.0051
 
-# source: https://hub.docker.com/r/ollama/ollama
+# source: https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html#with-apt-ubuntu-debian
 
 echo -e "\Installation des NVIDIA Docker tools..."
 
